@@ -6,9 +6,13 @@ self.addEventListener('fetch', event => {
                     console.log('hola cara de vola')
                     return res;
                 }else{
-                    console.log('hola cara de vola 2')
+                    console.log('hola cara de vola funciono!')
                     return fetch('img/main.jpg');
                 }
+            }).catch(() => {
+                console.log('Fallo total en la red, cargando imagen alternativa.');
+                return fetch('img/main.jpg');
             })
+  
     );
 })
